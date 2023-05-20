@@ -10,7 +10,7 @@ export const getData = async () => {
   const doc = parse(text);
   const posts = doc.querySelectorAll(".post").slice(0, 53);
 
-  posts.forEach((post: HTMLDivElement) => {
+  posts.forEach((post: any) => {
     const imageElement = post.querySelector("img") as HTMLImageElement;
     const id = post.querySelector(".postid")?.innerHTML as string;
     const src = imageElement.getAttribute("src") as string;

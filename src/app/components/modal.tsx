@@ -5,10 +5,14 @@ import Image from "next/image";
 import { useContext } from "react";
 import { motion } from "framer-motion";
 import { TwitterShareButton } from "react-share";
+import gsap from "gsap";
+import { ScrambleTextPlugin } from "gsap/dist/ScrambleTextPlugin";
 
 import { scambleHover } from "../lib/animations";
 
 import { ModalContext } from "../context/modal-context";
+
+gsap.registerPlugin(ScrambleTextPlugin);
 
 const Modal = () => {
   const { isOpen, setIsOpen, src, id } = useContext(ModalContext);
