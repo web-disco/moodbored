@@ -15,7 +15,7 @@ import { ModalContext } from "../context/modal-context";
 gsap.registerPlugin(ScrambleTextPlugin);
 
 const Modal = () => {
-  const { isOpen, setIsOpen, src, id } = useContext(ModalContext);
+  const { isOpen, setIsOpen, src, setSrc, id } = useContext(ModalContext);
 
   return (
     <motion.div
@@ -29,6 +29,8 @@ const Modal = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isOpen ? 1 : 0 }}
+        transition={{ delay: isOpen ? 0.2 : 0 }}
+        className="px-5 lg:px-10"
       >
         <Image
           src={src!}
@@ -42,7 +44,7 @@ const Modal = () => {
             href={`https://archillect.com/${id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-[#FF4D00] transition-all source-btn"
+            className="hover:text-[#FF4D00] transition-all source-btn flex-1"
             onMouseEnter={() =>
               scambleHover({ className: ".source-btn", text: "source" })
             }
@@ -50,7 +52,7 @@ const Modal = () => {
             source
           </Link>
           <button
-            className="hover:text-[#FF4D00] transition-all close-btn"
+            className="hover:text-[#FF4D00] transition-all close-btn flex-1"
             onClick={() => {
               setIsOpen && setIsOpen(false);
             }}
@@ -60,17 +62,19 @@ const Modal = () => {
           >
             close
           </button>
-          <TwitterShareButton
-            onMouseEnter={() =>
-              scambleHover({ className: ".share-btn", text: "share" })
-            }
-            url={`|| ${process.env.NEXT_PUBLIC_SITE_URL!}`}
-            title={`Look at this photo I found on Moodbored... source: https://archillect.com/${id}`}
-          >
-            <span className="share-btn hover:text-[#FF4D00] transition-all share-btn">
-              share
-            </span>
-          </TwitterShareButton>
+          <div className="flex-1 text-right">
+            <TwitterShareButton
+              onMouseEnter={() =>
+                scambleHover({ className: ".share-btn", text: "share" })
+              }
+              url={`|| ${process.env.NEXT_PUBLIC_SITE_URL!}`}
+              title={`Look at this photo I found on Moodbored... source: https://archillect.com/${id}`}
+            >
+              <span className="share-btn hover:text-[#FF4D00] transition-all share-btn">
+                share
+              </span>
+            </TwitterShareButton>
+          </div>
         </div>
       </motion.div>
     </motion.div>

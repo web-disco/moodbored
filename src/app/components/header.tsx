@@ -24,9 +24,11 @@ const Header = () => {
     <section className="h-screen flex items-center">
       <div>
         <Link href="/">
-          <h1 className="text-[60px] scramble font-semibold">Moodbored...</h1>
+          <h1 className="text-[30px] lg:text-[60px] scramble font-semibold">
+            Moodbored...
+          </h1>
         </Link>
-        <p className="opacity-0 header-text font-normal text-[12px] max-w-[500px] text-gray-500">
+        <p className="opacity-0 header-text text-[10px] lg:text-[12px] max-w-full lg:max-w-[500px] text-gray-500">
           Share and discover visually simulating content. <br /> Curated from
           the help of{" "}
           <Link

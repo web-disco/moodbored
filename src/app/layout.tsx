@@ -21,7 +21,7 @@ const proto = localFont({
 });
 
 export const metadata = {
-  title: "Moodbored // Moodbored",
+  title: "Moodbored...",
   description: "Share and discover visually simulating content",
 };
 

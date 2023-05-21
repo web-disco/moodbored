@@ -8,7 +8,7 @@ import { getData } from "./lib/archillect";
 export default async function Home() {
   const images = await getData();
   return (
-    <main className="container mx-auto px-10">
+    <main className="container mx-auto px-5 lg:px-10">
       <Header />
       <section
         id="discover"
