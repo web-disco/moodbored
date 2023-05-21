@@ -29,14 +29,13 @@ const Modal = () => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: isOpen ? 1 : 0 }}
-        transition={{ delay: isOpen ? 0.2 : 0 }}
         className="px-5 lg:px-10"
       >
         <Image
           src={src!}
           width="500"
           height="500"
-          alt="modal"
+          alt={id!}
           className="object-cover"
         />
         <div className="flex justify-between text-xs mt-2">
@@ -55,6 +54,9 @@ const Modal = () => {
             className="hover:text-[#FF4D00] transition-all close-btn flex-1"
             onClick={() => {
               setIsOpen && setIsOpen(false);
+              setTimeout(() => {
+                setSrc && setSrc("");
+              }, 200);
             }}
             onMouseEnter={() => {
               scambleHover({ className: ".close-btn", text: "close" });
