@@ -8,7 +8,7 @@ import { TwitterShareButton } from "react-share";
 import gsap from "gsap";
 import { ScrambleTextPlugin } from "gsap/dist/ScrambleTextPlugin";
 
-import { scambleHover } from "../lib/animations";
+import { scambleHover } from "../utils/animations";
 
 import { ModalContext } from "../context/modal-context";
 

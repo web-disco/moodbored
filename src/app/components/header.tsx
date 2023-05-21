@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import { ScrambleTextPlugin } from "gsap/dist/ScrambleTextPlugin";
 import { useLenis } from "@studio-freight/react-lenis";
 
-import { scambleHover, headerAnimations } from "../lib/animations";
+import { scambleHover, headerAnimations } from "../utils/animations";
 
 gsap.registerPlugin(ScrambleTextPlugin);
 

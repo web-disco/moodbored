@@ -1,7 +1,7 @@
 "use client";
 
 import { useLenis } from "@studio-freight/react-lenis";
-import { scambleHover } from "../lib/animations";
+import { scambleHover } from "../utils/animations";
 
 const Footer = () => {
   const lenis = useLenis();
